@@ -15,6 +15,18 @@ public class PigLatin{
   public static boolean testVowel(char a){
     return (a =='a'||a =='e'||a =='i'||a =='o'||a =='u');
   }
+  public static boolean testLetter(String s){
+    String[] letters = {"q","w","e","r","t","y","u","i","o","p",
+    "a","s","d","f","g","h","j","k","l",
+    "z","x","c","v","b","n","m"}
+    int length = letters.length;
+    for (int i = 0; i < length; i++) {
+      if (digraphs[i].equals(s)) {
+        return true;
+      }
+    }
+    return false;
+  }
   public static String pigLatinSimple(String s){
     s = s.toLowerCase();
     int length = s.length();
@@ -29,6 +41,7 @@ public class PigLatin{
   public static String pigLatin(String s){
     s = s.toLowerCase();
     int length = s.length();
+    //testing digraph condition
     if (length >= 2) {
       if (testDigraph(s.substring(0,2))) {
         if (length == 2) {
@@ -37,6 +50,7 @@ public class PigLatin{
         return s.substring(2,length) + s.substring(0,2) + "ay";
       }
     }
+    //code from pigLatinSimple
     if (testVowel(s.charAt(0))) {
       return (s + "hay");
     }
