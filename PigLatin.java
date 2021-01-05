@@ -21,7 +21,7 @@ public class PigLatin{
     "z","x","c","v","b","n","m"}
     int length = letters.length;
     for (int i = 0; i < length; i++) {
-      if (digraphs[i].equals(s)) {
+      if (letters[i].equals(s)) {
         return true;
       }
     }
