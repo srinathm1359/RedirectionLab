@@ -1,5 +1,17 @@
 import java.util.*;
 public class PigLatin{
+  public static boolean testDigraph(String s){
+    String[] digraphs = {"bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh",
+    "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn",
+    "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"};
+    int length = digraphs.length;
+    for (int i = 0; i < length; i++) {
+      if (digraphs[i].equals(s)) {
+        return true;
+      }
+    }
+    return false;
+  }
   public static boolean testVowel(char a){
     return (a =='a'||a =='e'||a =='i'||a =='o'||a =='u');
   }
