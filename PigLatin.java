@@ -27,6 +27,16 @@ public class PigLatin{
     }
     return false;
   }
+  public static boolean testNumber(String s){
+    String[] numbers = {"0","1","2","3","4","5","6","7","8","9"}
+    int length = numbers.length;
+    for (int i = 0; i < length; i++) {
+      if (numbers[i].equals(s)) {
+        return true;
+      }
+    }
+    return false;
+  }
   public static String pigLatinSimple(String s){
     s = s.toLowerCase();
     int length = s.length();
