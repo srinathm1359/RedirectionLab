@@ -26,6 +26,25 @@ public class PigLatin{
     }
     return s.substring(1,length) + s.charAt(0) + "ay";
   }
+  public static String pigLatin(String s){
+    s = s.toLowerCase();
+    int length = s.length();
+    if (length >= 2) {
+      if (testDigraph(s.substring(0,2))) {
+        if (length == 2) {
+          return s + "ay";
+        }
+        return s.substring(2,length) + s.substring(0,2) + "ay";
+      }
+    }
+    if (testVowel(s.charAt(0))) {
+      return (s + "hay");
+    }
+    if (length == 1) {
+      return (s + "ay");
+    }
+    return s.substring(1,length) + s.charAt(0) + "ay";
+  }
   public static void main(String[] args){
     //use the standard input (terminal input)
     //as the string that you read from
@@ -36,7 +55,7 @@ public class PigLatin{
       Scanner scan = new Scanner(n.nextLine());
       while (scan.hasNext()) {
         String word = scan.next();
-        System.out.print(pigLatinSimple(word));
+        System.out.print(pigLatin(word));
         System.out.print(" ");
       }
       System.out.println();
